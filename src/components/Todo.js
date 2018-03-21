@@ -1,11 +1,10 @@
 var React = require('react');
+var TodoForm = require('./TodoForm');
 
 class Todo extends React.Component{
 	render(){
 		return (
-			<div>
-				<input type="text" placeholder="Add Todo Item" />
-			</div>
+			<TodoForm />
 		);
 	}
 }
