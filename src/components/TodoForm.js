@@ -10,7 +10,9 @@ class TodoForm extends React.Component{
 	}
 	handleFormSubmit(evt){
 		evt.preventDefault();
-		console.log(this.inputRef.value);
+		var todo = this.inputRef.value;
+		this.props.onNewTodoItem(todo);
+		this.inputRef.value = '';
 	}
 	handleRefInputEvt(inputRef){
 		this.inputRef = inputRef;
