@@ -19,10 +19,17 @@ class Todo extends React.Component{
 		});
 	}
 	render(){
+		var todoList = [];
+		var todos = this.state.todos;
+		for(let i = 0; i < todos.length; ++i){
+			todoList.push(<li className="list-group-item">{todos[i]}</li>);
+		}
 		return (
 			<div>
 				<TodoForm onNewTodoItem={this.handleNewTodoItem} />
-				{this.state.todos}				
+				<ul className="list-group">
+					{todoList}
+				</ul>
 			</div>
 		);
 	}
