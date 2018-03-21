@@ -41,6 +41,7 @@ class Todo extends React.Component{
 					todos={todos}
 					onDeleteBtnClick={this.handleDeleteBtnClick}
 				/>
+				<br />
 				<TodosCount todosCount={todos.length} />
 			</div>
 		);
