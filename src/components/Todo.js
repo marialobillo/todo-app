@@ -1,5 +1,6 @@
 var React = require('react');
 var TodoForm = require('./TodoForm');
+var TodoList = require('./TodoList');
 
 class Todo extends React.Component{
 	constructor(props){
@@ -8,6 +9,7 @@ class Todo extends React.Component{
 			todos: []
 		};
 		this.handleNewTodoItem = this.handleNewTodoItem.bind(this);
+		this.handleDeleteBtnClick = this.handleDeleteBtnClick.bind(this);
 	}
 	handleNewTodoItem(todo){
 		this.setState((prevState) => {
@@ -18,18 +20,17 @@ class Todo extends React.Component{
 			};
 		});
 	}
+	handleDeleteBtnClick(index){
+
+	}
 	render(){
-		var todoList = [];
-		var todos = this.state.todos;
-		for(let i = 0; i < todos.length; ++i){
-			todoList.push(<li className="list-group-item">{todos[i]}</li>);
-		}
+
 		return (
 			<div>
 				<TodoForm onNewTodoItem={this.handleNewTodoItem} />
-				<ul className="list-group">
-					{todoList}
-				</ul>
+				<TodoList
+					todos={this.state.todos}
+					onDeleteBtnClick={this.handleDeleteBtnClick}/>
 			</div>
 		);
 	}

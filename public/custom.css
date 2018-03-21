@@ -1,0 +1,12 @@
+.btn-right{
+	float: right;
+}
+
+.btn-left{
+	float:left;
+	vertical-align: bottom;
+}
+
+.todo-item{
+	font-size: 1.8em;
+}
